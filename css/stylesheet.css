@@ -1,0 +1,43 @@
+/*reset window*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* filters*/
+#filters{
+    margin-bottom: 20px;
+}
+
+/*car-listing*/
+/*might edit padding*/
+#car-listings{
+    display: flex;
+    /*grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));*/
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.car-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+/*might edit text color*/
+.car-card h3 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.car-card p {
+  margin: 5px 0;
+  color: #666;
+}
