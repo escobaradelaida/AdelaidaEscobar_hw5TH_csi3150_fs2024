@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Sales Site</title>
+    <!-- this is the link for the boxicons-->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <!-- css link-->
+      <link rel="stylesheet" href="./css/stylesheet.css">
+
+</head>
+<body>
+    <header>
+        <h1>Used Car Dealership</h1>
+    </header>
+    <main>
+        <!--section for filters-->
+        <section id="filters">
+            <h2>Filter Cars</h2>
+            <!--minimun year-->
+            <label for="minYear">Min Year:</label>
+            <!--input from user-->
+            <input type="number" id="minYear" placeholder="e.g., 2006">
+            <!--maximum year-->
+            <label for="maxYear">Max Year:</label>
+            <!--input from user-->
+            <input type="number" id="maxYear" placeholder="e.g., 2015">
+
+            <!--the make of the vehicle-->
+            <!--user selection-->
+            <label for="make">Make:</label>
+            <select id="make" multiple>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Cheverlot">Cheverlot</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Subaru">Subau</option>
+                <option value="Mazda">Mazda</option>
+                <option value="Kia">Kia</option>
+                <option value="Dodge">Dodge</option>
+                <option value="Cadillac">Cadillac</option>
+                <option value="Jaguar">Jaguar</option>
+                <option value="Porche">Porche</option>
+                <option value="Lexus">Lexus</option>
+                <option value="BMW">BMW</option>
+            </select>
+            <!--adding a clear button so users to reset the select scrollcbar-->
+            <button type="button" onClick="clearSelection('make')">Clear Make Selection</button>
+
+            <!--maximum mileage-->
+            <label for="maxMileage">Max Mileage:</label>
+            <input type="number" id="maxMileage" placeholder="e.g., 30000">
+
+            <!--min and max price-->
+            <label for="minPrice">Min Price:</label>
+            <input type="number" id="minPrice" placeholder="e.g., 5000">
+            <label for="maxPrice">Max Price:</label>
+            <input type="number" id="maxPrice" placeholder="e.g., 15000">
+
+            <!--color of vehicle-->
+            <label for="color">Color:</label>
+            <select id="color" multiple>
+                <option value="silver">Silver</option>
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="gray">Gray</option>
+                <option value="green">Green</option>
+            </select>
+            <button type="button" onClick="clearSelection('color')">Clear Color Selection</button>
+
+            <!--apply the filters with the js script-->
+            <button onClick="applyFilters()">Apply Filters</button>
+        </section>
+
+        <section id="car-listings">
+        <!--div for car-card-->
+        <!--each car in each div-->
+        <div class="car-card">
+            <h3>2018 Toyota Camry</h3>
+            <p><strong>Price:</strong> $18,000</p>
+            <p><strong>Mileage:</strong> 30,000 miles</p>
+            <p><strong>Color:</strong> Silver</p>
+            <p><strong>Gas Mileage:</strong> 25 mpg city, 35 mpg highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2016 Honda Civic</h3>
+            <p><strong>Price:</strong> $14,000</p>
+            <p><strong>Mileage:</strong> 45,000 miles</p>
+            <p><strong>Color:</strong> White</p>
+            <p><strong>Gas Mileage:</strong> 30 MPG City, 40 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2017 Ford Fusion</h3>
+            <p><strong>Price:</strong> $16,000</p>
+            <p><strong>Mileage:</strong> 35,000 miles</p>
+            <p><strong>Color:</strong> Black</p>
+            <p><strong>Gas Mileage:</strong> 28 MPG City, 38 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2019 Nissan Altima</h3>
+            <p><strong>Price:</strong> $17,000</p>
+            <p><strong>Mileage:</strong> 25,000 miles</p>
+            <p><strong>Color:</strong> Blue</p>
+            <p><strong>Gas Mileage:</strong> 27 MPG City, 36 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2015 Chevrolet Malibu</h3>
+            <p><strong>Price:</strong> $12,000</p>
+            <p><strong>Mileage:</strong> 50,000 miles</p>
+            <p><strong>Color:</strong> Red</p>
+            <p><strong>Gas Mileage:</strong> 25 MPG City, 37 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2016 Volkswagen Passat</h3>
+            <p><strong>Price:</strong> $15,000</p>
+            <p><strong>Mileage:</strong> 40,000 miles</p>
+            <p><strong>Color:</strong> Gray</p>
+            <p><strong>Gas Mileage:</strong> 29 MPG City, 40 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2020 Hyundai Elantra</h3>
+            <p><strong>Price:</strong> $16,000</p>
+            <p><strong>Mileage:</strong> 22,000 miles</p>
+            <p><strong>Color:</strong> Silver</p>
+            <p><strong>Gas Mileage:</strong> 30 MPG City, 41 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2014 Subaru Outback</h3>
+            <p><strong>Price:</strong> $14,000</p>
+            <p><strong>Mileage:</strong> 60,000 miles</p>
+            <p><strong>Color:</strong> Green</p>
+            <p><strong>Gas Mileage:</strong> 22 MPG City, 30 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2017 Mazda CX-5</h3>
+            <p><strong>Price:</strong> $19,000</p>
+            <p><strong>Mileage:</strong> 32,000 miles</p>
+            <p><strong>Color:</strong> Blue</p>
+            <p><strong>Gas Mileage:</strong> 24 MPG City, 31 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2018 Kia Sorento</h3>
+            <p><strong>Price:</strong> $17,000</p>
+            <p><strong>Mileage:</strong> 28,000 miles</p>
+            <p><strong>Color:</strong> White</p>
+            <p><strong>Gas Mileage:</strong> 22 MPG City, 29 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2015 Dodge Challenger</h3>
+            <p><strong>Price:</strong> $24,000</p>
+            <p><strong>Mileage:</strong> 30,000 miles</p>
+            <p><strong>Color:</strong> Black</p>
+            <p><strong>Gas Mileage:</strong> 19 MPG City, 30 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2017 Cadillac XT5</h3>
+            <p><strong>Price:</strong> $32,000</p>
+            <p><strong>Mileage:</strong> 28,000 miles</p>
+            <p><strong>Color:</strong> Red</p>
+            <p><strong>Gas Mileage:</strong> 19 MPG City, 27 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2018 Jaguar F-PACE</h3>
+            <p><strong>Price:</strong> $38,000</p>
+            <p><strong>Mileage:</strong> 26,000 miles</p>
+            <p><strong>Color:</strong> Blue</p>
+            <p><strong>Gas Mileage:</strong> 18 MPG City, 23 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2019 Tesla Model 5</h3>
+            <p><strong>Price:</strong> $55,000</p>
+            <p><strong>Mileage:</strong> 18,000 miles</p>
+            <p><strong>Color:</strong> Black</p>
+            <p><strong>Gas Mileage:</strong> Electric (370 Miles Per Charge)</p>
+        </div>
+        <div class="car-card">
+            <h3>2020 Porsche Cayenne</h3>
+            <p><strong>Price:</strong> $68,000</p>
+            <p><strong>Mileage:</strong> 22,000 miles</p>
+            <p><strong>Color:</strong> White</p>
+            <p><strong>Gas Mileage:</strong> 20 MPG City, 26 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2017 Lexus ES</h3>
+            <p><strong>Price:</strong> $26,000</p>
+            <p><strong>Mileage:</strong> 29,000 miles</p>
+            <p><strong>Color:</strong> White</p>
+            <p><strong>Gas Mileage:</strong> 21 MPG City, 30 MPG, Highway</p>
+        </div>
+        <div class="car-card">
+            <h3>2016 BMW 5 Series</h3>
+            <p><strong>Price:</strong> $27,000</p>
+            <p><strong>Mileage:</strong> 32,000 miles</p>
+            <p><strong>Color:</strong> Black</p>
+            <p><strong>Gas Mileage:</strong> 23 MPG City, 34 MPG, Highway</p>
+        </div>
+        </section>
+
+        <script src="./js/usedCars.js" defer></script>
+        <script src="./js/index.js" defer></script>
+    
+    </main>
+    <footer></footer>
+</body>
+</html>
