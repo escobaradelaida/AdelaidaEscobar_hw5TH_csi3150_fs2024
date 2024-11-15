@@ -26,6 +26,10 @@ function applyFilters() {
     );
   });
 
+  // my colors filter is not working so putting in console log to see what it's display
+  console.log("Selected colors:", color);
+  console.log("Filtered cars:", filteredCars);
+  
   displayCars(filteredCars);
 }
 
@@ -51,4 +55,8 @@ function displayCars(cars) {
         `;
     carList.appendChild(carCard);
   });
+}
+function clearSelection(id) {
+  const selectElement = document.getElementById(id);
+  selectElement.selectedIndex = -1; // Clear selection
 }
