@@ -29,7 +29,7 @@ function applyFilters() {
   // my colors filter is not working so putting in console log to see what it's display
   console.log("Selected colors:", color);
   console.log("Filtered cars:", filteredCars);
-  
+
   displayCars(filteredCars);
 }
 
@@ -46,7 +46,10 @@ function displayCars(cars) {
   cars.forEach((car) => {
     const carCard = document.createElement("div");
     carCard.className = "car-card";
-    carCard.innerHTML = `
+    carCard.innerHTML =
+      //adding img path for the imgs to transfer when filters are applied
+      `
+            <img src="${car.image}" alt="2017 Ford Fusion - Black">
             <h3>${car.year} ${car.make} ${car.model}</h3>
             <p>Price: $${car.price}</p>
             <p>Mileage: ${car.mileage} miles</p>
