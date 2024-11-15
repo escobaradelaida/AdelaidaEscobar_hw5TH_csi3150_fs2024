@@ -17,6 +17,7 @@ const usedCars = [
     price: 14000,
     color: "White",
     gasMileage: "30 mpg city, 40 mpg highway",
+    image: "../assets/img/2016_Honda_Civic_White.jpg"
   },
   {
     year: 2017,
