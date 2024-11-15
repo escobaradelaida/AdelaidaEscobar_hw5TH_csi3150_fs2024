@@ -49,7 +49,7 @@ function displayCars(cars) {
     carCard.innerHTML =
       //adding img path for the imgs to transfer when filters are applied
       `
-            <img src="${car.image}" alt="2017 Ford Fusion - Black">
+            <img src="${car.image}" alt="">
             <h3>${car.year} ${car.make} ${car.model}</h3>
             <p>Price: $${car.price}</p>
             <p>Mileage: ${car.mileage} miles</p>
