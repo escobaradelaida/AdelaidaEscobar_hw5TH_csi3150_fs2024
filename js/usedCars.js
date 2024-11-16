@@ -17,7 +17,7 @@ const usedCars = [
     price: 14000,
     color: "White",
     gasMileage: "30 mpg city, 40 mpg highway",
-    image: "../assets/img/2016_Honda_Civic_White.jpg"
+    image: "./assets/img/2016_Honda_Civic_White.jpg"
   },
   {
     year: 2017,
@@ -27,7 +27,7 @@ const usedCars = [
     price: 16000,
     color: "Black",
     gasMileage: "28 mpg city, 38 mpg highway",
-    image: "../assets/img/2017_Ford_Fusion_Black.jpg"
+    image: "./assets/img/2017_Ford_Fusion_Black.jpg"
   },
   {
     year: 2019,
