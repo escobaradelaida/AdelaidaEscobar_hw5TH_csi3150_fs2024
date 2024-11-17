@@ -1,3 +1,7 @@
+//adding image path to car in the array in hopes that the other js script will pull the image
+//when filters are applied
+
+
 const usedCars = [
   {
     year: 2018,
@@ -173,4 +177,5 @@ const usedCars = [
   },
 ];
 
+//coding out module.export = usedCars; seemed to make the script work
 //module.exports = usedCars;

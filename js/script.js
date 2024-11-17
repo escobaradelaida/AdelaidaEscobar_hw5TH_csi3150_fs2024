@@ -1,3 +1,5 @@
+// NOT USED
+
 const carListings = document.getElementById("car-listings");
 
 function displayCars(cars) {
